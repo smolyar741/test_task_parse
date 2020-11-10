@@ -3,6 +3,7 @@ import bs4
 import requests
 import collections
 import csv
+import json
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger('wb')
@@ -114,6 +115,13 @@ class Client:
             writer.writerow(HEADERS)
             for item in self.result:
                 writer.writerow(item)
+
+        with open('wildberries.csv') as f:
+            reader = csv.DictReader(f)
+            rows = list(reader)
+
+        with open('wb.json', 'w', encoding='utf-8') as f:
+            json.dump(rows, f)
 
 
     def run(self):

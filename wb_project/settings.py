@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     #'rest_framework.authtoken'
     'sorl.thumbnail',
     'debug_toolbar',
+    'mptt',
 ]
 
 MIDDLEWARE = [
@@ -58,6 +59,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'wb_project.urls'
+
+MPTT_ADMIN_LEVEL_INDENT = 40
 
 TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
 TEMPLATES = [
@@ -127,3 +130,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+SITE_ID = 1
